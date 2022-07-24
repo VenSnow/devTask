@@ -29,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         View::composer('index.index', GenreComposer::class);
         View::composer('index.show', GenreComposer::class);
+        View::composer('movie.create', GenreComposer::class);
+        View::composer('movie.edit', GenreComposer::class);
     }
 }

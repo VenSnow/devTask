@@ -4,7 +4,7 @@
     @if(isset($genre))
         {{ $genre->title }}
     @else
-        {{ __('index.genres') }}
+        {{ __('index.title') }}
     @endif
 @endsection
 

@@ -20,7 +20,8 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('genres/{genre}/movies', [IndexController::class, 'indexByGenre'])->name('movies.by.genre');
 Route::get('movies/{movie}', [IndexController::class, 'show'])->name('movie.show');
 Route::prefix('crud')->name('crud.')->group(function () {
-    Route::resource('genre', GenreController::class);
-    Route::resource('movie', MovieController::class);
+    Route::resource('genre', GenreController::class)->except('show');
+    Route::resource('movie', MovieController::class)->except('show');
+    Route::patch('movie/{movie}/change-statsus', [MovieController::class, 'changeStatusOfPublication'])->name('movie.change.status');
 });
 
