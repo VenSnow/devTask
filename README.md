@@ -5,6 +5,7 @@
 2) `composer install`
 3) `php artisan:key generate`
 4) `php artisan migrate --seed`
+5) `php artisan test` - Тестирование API
 
 ## **API**
 1) #### Фильмы

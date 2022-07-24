@@ -17,12 +17,12 @@ class GenreController extends Controller
      */
     public function index()
     {
-        return Genre::latest()->paginate(10);
+        return Genre::latest()->paginate(10)->toJson();
     }
 
     public function movieIndexByGenre($id)
     {
         $genre = Genre::findOrFail($id);
-        return $genre->movies()->where('is_published', '=', '1')->paginate(15);
+        return $genre->movies()->where('is_published', '=', '1')->paginate(15)->toJson();
     }
 }
